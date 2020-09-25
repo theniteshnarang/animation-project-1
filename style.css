@@ -1,0 +1,374 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+     /* For Index.html Page */
+.portfolio{
+    color: white;
+    background: radial-gradient(#2ec1ac,#000000);
+}
+    .nav-open{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40vh;
+        width: 100%;
+        background-color: whitesmoke;
+        color: black;
+        display: grid;
+        grid-template-columns: 5% 1fr 1fr 5%;
+        z-index: 1;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        transform: translateY(-100%);
+    }
+        .logo, .menu{
+            z-index: 2;
+            cursor: pointer;
+        }
+        .contact{
+            grid-column: 2/3;
+        }
+
+        .contact h3 , .social h3{
+            padding-bottom: 20px;
+        }
+
+        .social-links a{
+            padding: 0 20px;
+        }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        height: 10vh;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        }
+        .logo{
+            font-weight: 400;
+        }
+        .logo:hover{
+            animation: color-change ease-in-out 0.5s infinite alternate;
+        }
+
+        @keyframes color-change{
+            0%{
+                color: white;
+                
+            }
+            100%{
+                color: #2ec1ac;
+            }
+        }
+
+    .page{
+        min-height: 90vh;
+        display: grid;
+        grid-template-columns: 5% 1fr 1fr 1fr 5%;
+    }
+
+        .details{
+            grid-column: 2/3;
+            align-self: end;
+            padding-bottom: 20px;
+        }
+            .details h1{
+                font-size: 3.125rem;
+                font-weight: 600;
+            }
+            .details h2{
+                font-weight: 500;
+                font-size: 1.875rem;
+                padding-bottom: 40px;
+            }
+        
+        .profile-img{
+            display: flex;
+            height: 400px;
+            overflow: hidden;
+            grid-column: 3/4;
+            align-self:start;
+            justify-self: center;
+            margin-top: 20px;
+        }
+
+            .profile-img img{
+                height: inherit;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+            }
+
+            .profile-img .model-left{
+                transform: translate(0,-10%);
+            }
+
+            .profile-img .model-right{
+                transform: translate(0,10%);
+            }
+
+            .profile-img:hover .model-left{
+                transform: translate(0,0);
+            }
+
+            .profile-img:hover .model-right{
+                transform: translate(0,0);
+            }
+
+    .pages{
+        position: absolute;
+        top: 30%;
+        right: 5%;
+    }
+
+    .pages h3{
+        font-weight: 300;
+    }
+
+    .pages div{
+        padding: 20px 0;
+        width: 3.125rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .pages svg{
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .pages svg:hover{
+        animation: grow 0.5s ease-in-out infinite alternate;
+    }
+    .pages svg.active{
+        opacity: 1;
+      
+    }
+
+    @keyframes grow{
+        0%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(2);
+        }
+    }
+
+
+/* CSS for photo.html starts  */
+
+.banner{
+    width: 100%;
+    height: 50vh;
+    margin: auto;
+    position: relative;
+} 
+    .banner img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .author{
+        color: white;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%,-70%);
+        text-shadow: 2px 2px 2px rgba(0,0,0, 0.5);
+        text-align: center;
+    }
+
+.story, .work{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 80px auto;
+}
+    .story-description , .work-description{
+        width: 40%;
+    }
+
+    .story-description h3, .work-description h3{
+        font-size: 2.25rem;
+        padding-bottom: 30px;
+    }
+
+    .story-description p, .work-description p{
+        padding: 20px 0;
+        font-size: 1.25rem;
+    }
+
+    .work .portfolio-pics{
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+    }
+
+    .portfolio-pics img{
+        width: 100%;
+    }
+
+/* Media Queries for Mobile Responsive Design */
+
+@media (max-width: 1024px){
+
+/* For Index.html Page */
+
+    .page{
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 2fr 1fr;
+    }
+    .profile-img{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .details{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .details h1{
+        font-size: 2.2rem;
+    }
+
+    .details h2{
+        font-size: 1.2rem;
+    }
+
+/* for Photo.html page */
+    .story, .work{
+        display: flex;
+        flex-direction: column;
+    }
+    .story-description, .work-description{
+        width: 100%;
+    }
+    .profile-pic{
+        text-align: center;
+    }
+    .work .portfolio-pics{
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    }
+    .portfolio-pics img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 756px){
+
+ /* For Index.html Page */
+
+    .profile-img img{
+        height: 22rem;
+    }
+
+/* For photo.html Page */
+    .profile-pic img{
+       width: 300px;
+    }
+}
+        
+@media (max-width: 370px){
+
+ /* For Index.html Page */
+.nav-open{
+    grid-template-columns: 5% 1fr 5%;
+}
+    .contact{
+        grid-column: 2/3;
+        margin-top: 40px;
+    }
+    .social{
+        grid-column: 2/3;
+    }
+
+.page{
+    grid-template-rows: 1fr 0.2fr;
+}
+    .profile-img img{
+        height: 17rem;
+    }
+    .details h1{
+        font-size: 2rem;
+    }
+
+    .details h2{
+        font-size: 1rem;
+    }
+
+    .navbar h3{
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    .navbar svg{
+        width: 30px;
+    }
+
+/* For photo.html Page */
+.profile-pic img{
+    width: 200px;
+ }
+.story-description h3, .work-description h3{
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+
+.author h1{
+    font-size: 1.5rem;
+}
+.author h3{
+    font-size: 1rem;
+}
+}
+
+@media (max-width:280px){
+    .author h1{
+        font-size: 1.2rem;
+    }
+    .author h3{
+        font-size: 0.8rem;
+    }
+}
+
+/* JavaScript Annimation Starts here */
+
+.chef , .barber{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* .photographer , .chef{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+} */
+
+/* .photographer, .barber{
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+} */
+
