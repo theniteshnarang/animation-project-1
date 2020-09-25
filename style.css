@@ -222,7 +222,9 @@ body{
 @media (max-width: 1024px){
 
 /* For Index.html Page */
-
+    .chef, .barber{
+        margin-bottom: -45px;
+    }
     .page{
         grid-template-columns: 5% 1fr 5%;
         grid-template-rows: 2fr 1fr;
@@ -354,21 +356,4 @@ body{
     pointer-events: none;
 }
 
-/* .photographer , .chef{
-    position: absolute;
-    left: 0%;
-    bottom: 0%;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-} */
-
-/* .photographer, .barber{
-    position: absolute;
-    left: 0%;
-    bottom: 0%;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-} */
 
